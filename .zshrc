@@ -10,6 +10,11 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 
+## Load rbenv, install using brew
+
+eval "$(rbenv init -)"
+
+
 ## Git prompt
 
 autoload -Uz vcs_info
@@ -23,6 +28,7 @@ vcs_info_wrapper() {
         echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
     fi
 }
+
 
 ## Set clean custom prompt
 
@@ -39,3 +45,10 @@ PROMPT='%F{yellow}%3~%f $(vcs_info_wrapper)%(?.🚀.💥) '
 
 alias ll='ls -lhGp'
 alias cat='bat'
+
+
+## Load project specifics
+
+for file in ~/.zsh.d/projects/*.zshrc; do
+    source "$file"
+done

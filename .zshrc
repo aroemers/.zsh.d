@@ -45,6 +45,7 @@ PROMPT='%F{yellow}%3~%f $(vcs_info_wrapper)%(?.🚀.💥) '
 
 alias ll='ls -lhGp'
 alias cat='bat'
+alias dotenv='env $(grep -v '^#' .env | xargs)'
 
 
 ## Load project specifics
